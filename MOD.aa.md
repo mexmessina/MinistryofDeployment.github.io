@@ -1,0 +1,20 @@
+---
+layout: blog
+title: Teams
+permalink: /modaa/
+---
+
+## MOD.aa
+
+<p align="center">
+<img src="/img/lightbuld.jpg" width="150" height="150">
+</p>
+
+<div align="justify">
+<p style="font-size: 20px">
+É un dipartimento di ricerca e sviluppo centrato sull’uso di Intelligenza Artificiale e data-driven methods in sistemi complessi e sistemi dinamici. Sviluppa metodologie e software con applicabilità in finanza quantitativa, modellizzazione stocastica per sostenibilità e space economy.
+L’unità lavora come sviluppatore, data-analyst e utilizzatore diretto del metaverso in campo di ricerca, in particolare scientifica. Si focalizza sulla trasparenza e riproducibilita’ di software e metodologie.
+<br><br>
+In sinergia con MOD.o, utilizzerà le tecnologie blockchain per Academic publishing e cryptocurrency algorithmic trading, per costruire l’economia e il tessuto accademico-scientifico di MOD.s.
+</p>
+</div>
