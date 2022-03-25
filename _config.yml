@@ -34,7 +34,7 @@ favicon: "/img/rocket3.ico"
 black-favicon: "/img/rocket3.ico"
 logo: # leave blank if you don't want a logo
 
-background-img: "../img/standard_map_sito.gif"
+background-img: "../img/output-onlinegiftools.gif"
 
 ##############################
 # Dynamic Text on the Header #
