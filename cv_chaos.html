@@ -19,6 +19,17 @@
 				margin-left: 40px;
 				margin-right: 40px;
 			}
+			#container {
+				margin: 0px auto;
+				width: 500px;
+				height: 375px;
+				border: 10px #333 solid;
+			}
+			#videoElement {
+				width: 500px;
+				height: 375px;
+				background-color: #666;
+			}
 			</style>
 	</head>
 	<body class="is-preload">
@@ -54,6 +65,11 @@
 							</section>
 					</div>
 				</div>
+				<div id="container">
+					<video autoplay="true" id="videoElement">
+					
+					</video>
+				</div>
 
 			<!-- Footer -->
 			<footer id="footer">
@@ -75,6 +91,18 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			<script>
+				var video = document.querySelector("#videoElement");
+				if (navigator.mediaDevices.getUserMedia) {
+				navigator.mediaDevices.getUserMedia({ video: true })
+					.then(function (stream) {
+					video.srcObject = stream;
+					})
+					.catch(function (err0r) {
+					console.log("Something went wrong!");
+					});
+				}
+			</script>
 
 	</body>
 </html>
