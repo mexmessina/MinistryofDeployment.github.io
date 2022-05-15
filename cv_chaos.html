@@ -130,6 +130,10 @@
 						}
 						cv.imshow("canvas_output", dst);
 
+						let x_image = Math.round(2*(face.x + face.width/2)/video.width);
+						putText(dst, "test", point1, Farben, 1, 1);
+
+
 						let canvas = document.getElementById("canvas_chaos");
 
 						let ctx = canvas.getContext("2d");
@@ -137,9 +141,6 @@
 						img.src = 'images/stdmap4cv/plot' + 1 + '_' + 1 + '.png'; // Set source path
 
 						ctx.drawImage(img, 0, 0, img.width, img.height);
-
-						let x_image = Math.round(2*(face.x + face.width/2)/video.width);
-						putText(img, x_image);
 
 						// schedule next one.
 						let delay = 1000/FPS - (Date.now() - begin);
