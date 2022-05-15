@@ -99,7 +99,8 @@
 					.catch(function(err) {
 						console.log("An error occurred! " + err);
 					});
-					let src = new cv.Mat(video.height, video.width, cv.CV_8UC4);
+					Mat img(600, 800, CV_8UC3, Scalar::all(0));
+				// let src = new cv.Mat(video.height, video.width, cv.CV_8UC4);
 				// 	let dst = new cv.Mat(video.height, video.width, cv.CV_8UC1);
 				// 	let gray = new cv.Mat();
 				// 	let cap = new cv.VideoCapture(cam_input);
@@ -145,7 +146,7 @@
 						Point textOrg(0, 0);
 
 						// then put the text itself
-						putText(src, text, textOrg, fontFace, fontScale,
+						putText(img, text, textOrg, fontFace, fontScale,
 								Scalar::all(255), thickness, 8);
 						
 						// var x_image = Math.round(2*(face.x + face.width/2)/video.width);
