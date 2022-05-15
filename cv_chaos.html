@@ -55,6 +55,7 @@
 
 							<video id="cam_input" height="480" width="640"></video>
 							<canvas id="canvas_output"></canvas>
+							<canvas id="canvas_chaos"></canvas>
 
 							<h3>Breve Descrizione</h3>
 							L'algoritmo identifica la vostra faccia, utilizza la sua posizone per variare in real-time il valore di due parametri associati al calcolo
@@ -132,6 +133,19 @@
 							cv.rectangle(dst, point1, point2, [255, 0, 0, 255]);
 						}
 						cv.imshow("canvas_output", dst);
+						var canvas = document.getElementById('viewport'),
+						context = canvas.getContext('2d');
+
+						make_base();
+
+						function make_base()
+						{
+						base_image = new Image();
+						base_image.src = 'images/stdmap4cv/plot1_0.png';
+						base_image.onload = function(){
+							context.drawImage(base_image, 0, 0);
+						}
+						}
 						// schedule next one.
 						let delay = 1000/FPS - (Date.now() - begin);
 						setTimeout(processVideo, delay);
