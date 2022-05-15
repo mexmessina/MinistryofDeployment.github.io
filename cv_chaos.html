@@ -134,10 +134,10 @@
 						}
 						cv.imshow("canvas_output", dst);
 
-						var canvas = document.getElementById("canvas_chaos");
+						let canvas = document.getElementById("canvas_chaos");
 
-						var ctx = canvas.getContext("2d");
-						var img = new Image();   // Create new img element
+						let ctx = canvas.getContext("2d");
+						let img = new Image();   // Create new img element
 						img.src = 'images/stdmap4cv/plot1_0.png'; // Set source path
 
 						ctx.drawImage(img, 0, 0, img.width, img.height);
