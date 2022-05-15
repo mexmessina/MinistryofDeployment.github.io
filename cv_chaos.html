@@ -52,12 +52,18 @@
 
 						<!-- Content -->
 						<section id="content">
-							L'algoritmo identifica la vostra faccia, il cui moviemento viene usato come input per lo studio chaos.
+
+							<video id="cam_input" height="480" width="640"></video>
+							<canvas id="canvas_output"></canvas>
+
+							<h3>Breve Descrizione</h3>
+							L'algoritmo identifica la vostra faccia, utilizza la sua posizone per variare in real-time il valore di due parametri associati al calcolo
+							della mappa del <a href="https://shaddenlab.berkeley.edu/uploads/LCS-tutorial/FTLE-derivation.html">Finite-Time Lyapunov Exponent </a> nello spazio delle condizioni iniziali
+							della <a href="https://en.wikipedia.org/wiki/Standard_map">mappa standard</a>, rilevante per la teoria del chaos e per 
+							<a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4041723">applicazioni in meccanica orbitale</a>. 
 						</section>
 
-						<video id="cam_input" height="480" width="640"></video>
-						<canvas id="canvas_output"></canvas>
-						
+
 					</div>
 				</div>
 
