@@ -133,7 +133,8 @@
 							cv.rectangle(dst, point1, point2, [255, 0, 0, 255]);
 						}
 						cv.imshow("canvas_output", dst);
-						var canvas = document.getElementById('viewport'),
+						
+						var canvas = document.getElementById('canvas_chaos'),
 						context = canvas.getContext('2d');
 
 						make_base();
@@ -146,6 +147,7 @@
 							context.drawImage(base_image, 0, 0);
 						}
 						}
+
 						// schedule next one.
 						let delay = 1000/FPS - (Date.now() - begin);
 						setTimeout(processVideo, delay);
