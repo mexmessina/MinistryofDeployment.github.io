@@ -129,10 +129,10 @@
 							cv.rectangle(dst, point1, point2, [255, 0, 0, 255]);
 						}
 						cv.imshow("canvas_output", dst);
-
+						
 						let x_image = Math.round(2*(face.x + face.width/2)/video.width);
-						putText(dst, "test", point1, Farben, 1, 1);
-
+						// x_image.toString()
+						// putText(dst, "test", point1, Farben, 1, 1);
 
 						let canvas = document.getElementById("canvas_chaos");
 
