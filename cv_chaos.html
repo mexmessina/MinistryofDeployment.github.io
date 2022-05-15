@@ -52,6 +52,8 @@
 							<video id="cam_input" height="480" width="640"></video>
 							<canvas id="canvas_output"></canvas>
 
+							Esponente comune delle chiavi <input type='text' id = 'n' disabled></input>
+
 							<h3>Output: Chaos</h3>
 							<canvas id="canvas_chaos" width="600" height="400"></canvas>
 
@@ -88,6 +90,8 @@
 			<script src="assets/js/main.js"></script>
 
 			<script type="text/JavaScript">
+				document.getElementById("n").value = 10054; 
+
 				function openCvReady() {
 				  cv['onRuntimeInitialized']=()=>{
 					let video = document.getElementById("cam_input"); // video is the id of video tag
@@ -99,7 +103,6 @@
 					.catch(function(err) {
 						console.log("An error occurred! " + err);
 					});
-					// Mat img(600, 800, CV_8UC3, Scalar::all(0));
 					let src = new cv.Mat(video.height, video.width, cv.CV_8UC4);
 					let dst = new cv.Mat(video.height, video.width, cv.CV_8UC1);
 					let gray = new cv.Mat();
