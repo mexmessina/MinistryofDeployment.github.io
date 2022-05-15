@@ -136,7 +136,7 @@
 						cv.imshow("canvas_output", dst);
 						
 						let point3 = new cv.Point(faces.get(0).x, faces.get(0).y-faces.get(0).y);
-						let x_image = norm(point3);
+						let x_image = cv.norm(point3);
 
 
 						// string text = "Funny text inside the box";
