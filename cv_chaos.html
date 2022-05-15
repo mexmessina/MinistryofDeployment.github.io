@@ -128,7 +128,6 @@
 							let point2 = new cv.Point(face.x + face.width, face.y + face.height);
 							cv.rectangle(dst, point1, point2, [255, 0, 0, 255]);
 
-							// let point3 = new cv.Point(face.x, face.y-face.y);
 							// let x_image = norm(point3);
 
 							// let point4 = new cv.Point(0*face.x, face.y);
@@ -137,6 +136,8 @@
 						cv.imshow("canvas_output", dst);
 						
 						let point3 = new cv.Point(faces.get(0).x, faces.get(0).y-faces.get(0).y);
+						let x_image = norm(point3);
+
 
 						// string text = "Funny text inside the box";
 						// int fontFace = FONT_HERSHEY_SCRIPT_SIMPLEX;
