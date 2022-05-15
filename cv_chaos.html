@@ -103,7 +103,7 @@
 					let dst = new cv.Mat(video.height, video.width, cv.CV_8UC1);
 					let gray = new cv.Mat();
 					let cap = new cv.VideoCapture(cam_input);
-					let faces = new cv.Rect();//cv.RectVector();
+					let faces = new cv.RectVector();
 					let classifier = new cv.CascadeClassifier();
 					let utils = new Utils('errorMessage');
 					let faceCascadeFile = 'haarcascade_frontalface_default.xml'; // path to xml
@@ -127,6 +127,12 @@
 							let point1 = new cv.Point(face.x, face.y);
 							let point2 = new cv.Point(face.x + face.width, face.y + face.height);
 							cv.rectangle(dst, point1, point2, [255, 0, 0, 255]);
+
+							let point3 = new cv.Point(face.x, 0*face.y);
+							let x_image = norm(point3);
+
+							let point4 = new cv.Point(0*face.x, face.y);
+							let y_image = norm(point4);
 						}
 						cv.imshow("canvas_output", dst);
 
