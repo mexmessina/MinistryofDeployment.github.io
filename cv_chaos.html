@@ -52,8 +52,6 @@
 							<video id="cam_input" height="480" width="640"></video>
 							<canvas id="canvas_output"></canvas>
 
-							Esponente comune delle chiavi <input type='text' id = 'n' disabled></input>
-
 							<h3>Output: Chaos</h3>
 							<canvas id="canvas_chaos" width="600" height="400"></canvas>
 
@@ -90,8 +88,6 @@
 			<script src="assets/js/main.js"></script>
 
 			<script type="text/JavaScript">
-				document.getElementById("n").value = 10054; 
-
 				function openCvReady() {
 				  cv['onRuntimeInitialized']=()=>{
 					let video = document.getElementById("cam_input"); // video is the id of video tag
@@ -152,7 +148,7 @@
 						// putText(img, text, textOrg, fontFace, fontScale,
 						// 		Scalar::all(255), thickness, 8);
 						
-						// var x_image = Math.round(2*(face.x + face.width/2)/video.width);
+						let x_image = 1; //Math.round(2*(face.x + face.width/2)/video.width);
 						// x_image.toString()
 						// putText(dst, "test", point1, Farben, 1, 1);
 
@@ -161,7 +157,7 @@
 						let ctx = canvas.getContext("2d");
 						let img = new Image();   // Create new img element
 
-						img.src = 'images/stdmap4cv/plot' + 1 + '_' + 1 + '.png'; // Set source path
+						img.src = 'images/stdmap4cv/plot' + x_image + '_' + 1 + '.png'; // Set source path
 
 						ctx.drawImage(img, 0, 0, img.width, img.height);
 
