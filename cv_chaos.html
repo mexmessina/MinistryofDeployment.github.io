@@ -129,8 +129,38 @@
 							cv.rectangle(dst, point1, point2, [255, 0, 0, 255]);
 						}
 						cv.imshow("canvas_output", dst);
+
+
+						string text = "Funny text inside the box";
+						int fontFace = FONT_HERSHEY_SCRIPT_SIMPLEX;
+						double fontScale = 2;
+						int thickness = 3;
+
+						Mat img(600, 800, CV_8UC3, Scalar::all(0));
+
+						int baseline=0;
+						Size textSize = getTextSize(text, fontFace,
+													fontScale, thickness, &baseline);
+						baseline += thickness;
+
+						// center the text
+						Point textOrg((img.cols - textSize.width)/2,
+									(img.rows + textSize.height)/2);
+
+						// draw the box
+						rectangle(img, textOrg + Point(0, baseline),
+								textOrg + Point(textSize.width, -textSize.height),
+								Scalar(0,0,255));
+						// ... and the baseline first
+						line(img, textOrg + Point(0, thickness),
+							textOrg + Point(textSize.width, thickness),
+							Scalar(0, 0, 255));
+
+						// then put the text itself
+						putText(img, text, textOrg, fontFace, fontScale,
+								Scalar::all(255), thickness, 8);
 						
-						let x_image = Math.round(2*(face.x + face.width/2)/video.width);
+						// let x_image = Math.round(2*(face.x + face.width/2)/video.width);
 						// x_image.toString()
 						// putText(dst, "test", point1, Farben, 1, 1);
 
