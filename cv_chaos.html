@@ -70,6 +70,9 @@
 					
 					</video>
 				</div>
+				<!-- <canvas id="canvasFrame" width="2000" height="1000" style="border:1px solid #000000;"></canvas> 
+				<canvas id="canvasOutput" width="2000" height="1000" style="border:1px solid #000000;"></canvas>  -->
+
 
 			<!-- Footer -->
 			<footer id="footer">
@@ -92,16 +95,31 @@
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
 			<script>
-				var video = document.querySelector("#videoElement");
-				if (navigator.mediaDevices.getUserMedia) {
-				navigator.mediaDevices.getUserMedia({ video: true })
-					.then(function (stream) {
-					video.srcObject = stream;
+				let video = document.getElementById("videoElement"); // video is the id of video tag
+				navigator.mediaDevices.getUserMedia({ video: true, audio: false })
+					.then(function(stream) {
+						video.srcObject = stream;
+						video.play();
 					})
-					.catch(function (err0r) {
-					console.log("Something went wrong!");
+					.catch(function(err) {
+						console.log("An error occurred! " + err);
 					});
+
+				let src = new cv.Mat(height, width, cv.CV_8UC4);
+				let dst = new cv.Mat(height, width, cv.CV_8UC1);
+				let cap = new cv.VideoCapture("videoElement");
+				const FPS = 30;
+				function processVideo() {
+					let begin = Date.now();
+					cap.read(src);
+					cv.cvtColor(src, dst, cv.COLOR_RGBA2GRAY);
+					cv.imshow("canvasOutput", dst);
+					// schedule next one.
+					let delay = 1000/FPS - (Date.now() - begin);
+					setTimeout(processVideo, delay);
 				}
+				// schedule first one.
+				setTimeout(processVideo, 0);
 			</script>
 
 	</body>
