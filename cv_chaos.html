@@ -135,7 +135,9 @@
 						let ctx = canvas.getContext("2d");
 						let img = new Image();   // Create new img element
 
-						// let x_image = Math.round(2*(face.x + face.width/2)/video.width)
+						let x_image = Math.round(2*(face.x + face.width/2)/video.width);
+						document.write(x_image);
+						
 						img.src = 'images/stdmap4cv/plot' + 1 + '_' + 1 + '.png'; // Set source path
 
 						ctx.drawImage(img, 0, 0, img.width, img.height);
