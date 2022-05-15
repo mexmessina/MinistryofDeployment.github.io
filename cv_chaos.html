@@ -47,9 +47,16 @@
 
 						<!-- Content -->
 						<section id="content">
-
+							
+							<h3>Input & Computer Vision</h3>
 							<video id="cam_input" height="480" width="640"></video>
 							<canvas id="canvas_output"></canvas>
+							
+							The value of face.x is <span id="facex"> </span>
+
+							The value of face.y is <span id="facey"> </span>
+
+							<h3>Output: Chaos</h3>
 							<canvas id="canvas_chaos" width="600" height="400"></canvas>
 
 							<h3>Breve Descrizione</h3>
@@ -58,8 +65,6 @@
 							della <a href="https://en.wikipedia.org/wiki/Standard_map">mappa standard</a>, rilevante per la teoria del chaos e per 
 							<a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4041723">applicazioni in meccanica orbitale</a>. 
 						</section>
-
-
 					</div>
 				</div>
 
@@ -128,11 +133,15 @@
 							cv.rectangle(dst, point1, point2, [255, 0, 0, 255]);
 						}
 						cv.imshow("canvas_output", dst);
+						
+						document.getElementById("facex").innerHTML = face.x;
+						document.getElementById("facey").innerHTML = face.y;
 
 						let canvas = document.getElementById("canvas_chaos");
 
 						let ctx = canvas.getContext("2d");
 						let img = new Image();   // Create new img element
+						
 						let test = 1;
 						img.src = 'images/stdmap4cv/plot' + test + '_0.png'; // Set source path
 
