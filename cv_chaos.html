@@ -52,11 +52,6 @@
 							<video id="cam_input" height="480" width="640"></video>
 							<canvas id="canvas_output"></canvas>
 
-							<script>
-								let x_image = Math.round(2*(face.x + face.width/2)/video.width);
-								document.write(x_image);
-							</script>
-
 							<h3>Output: Chaos</h3>
 							<canvas id="canvas_chaos" width="600" height="400"></canvas>
 
@@ -139,10 +134,12 @@
 
 						let ctx = canvas.getContext("2d");
 						let img = new Image();   // Create new img element
-
 						img.src = 'images/stdmap4cv/plot' + 1 + '_' + 1 + '.png'; // Set source path
 
 						ctx.drawImage(img, 0, 0, img.width, img.height);
+
+						let x_image = Math.round(2*(face.x + face.width/2)/video.width);
+						putText(img, x_image);
 
 						// schedule next one.
 						let delay = 1000/FPS - (Date.now() - begin);
