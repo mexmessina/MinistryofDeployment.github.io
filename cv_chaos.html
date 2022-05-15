@@ -133,20 +133,13 @@
 							cv.rectangle(dst, point1, point2, [255, 0, 0, 255]);
 						}
 						cv.imshow("canvas_output", dst);
-						
-						var canvas = document.getElementById('canvas_chaos'),
-						context = canvas.getContext('2d');
 
-						make_base();
+						var canvas = document.getElementById("canvas_chaos");
+						var ctx = canvas.getContext("2d");
+						var img = new Image();   // Create new img element
+						img.src = 'images/stdmap4cv/plot1_0.png'; // Set source path
 
-						function make_base()
-						{
-						base_image = new Image();
-						base_image.src = 'images/stdmap4cv/plot1_0.png';
-						base_image.onload = function(){
-							context.drawImage(base_image, 0, 0);
-						}
-						}
+						ctx.drawImage(img, 10, 10);
 
 						// schedule next one.
 						let delay = 1000/FPS - (Date.now() - begin);
