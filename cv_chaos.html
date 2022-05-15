@@ -55,7 +55,7 @@
 
 							<video id="cam_input" height="480" width="640"></video>
 							<canvas id="canvas_output"></canvas>
-							<canvas id="canvas_chaos" width="576" height="375" ></canvas>
+							<canvas id="canvas_chaos" width="600" height="400"></canvas>
 
 							<h3>Breve Descrizione</h3>
 							L'algoritmo identifica la vostra faccia, utilizza la sua posizone per variare in real-time il valore di due parametri associati al calcolo
@@ -140,7 +140,7 @@
 						var img = new Image();   // Create new img element
 						img.src = 'images/stdmap4cv/plot1_0.png'; // Set source path
 
-						ctx.drawImage(img, 0, 0);
+						ctx.drawImage(img, 0, 0, img.width, img.height);
 
 						// schedule next one.
 						let delay = 1000/FPS - (Date.now() - begin);
