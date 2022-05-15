@@ -135,7 +135,8 @@
 							// let y_image = norm(point4);
 						}
 						cv.imshow("canvas_output", dst);
-
+						
+						let point3 = new cv.Point(faces.get(0).x, faces.get(0).y-faces.get(0).y);
 
 						// string text = "Funny text inside the box";
 						// int fontFace = FONT_HERSHEY_SCRIPT_SIMPLEX;
